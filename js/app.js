@@ -39,13 +39,16 @@ Player.prototype.render() = function() {
 }
 
 Player.prototype.handleInput = function() {
-    
+
 }
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
+let enemy1, enemy2, enemy3;
 
+
+let allEnemies = []
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
