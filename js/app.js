@@ -63,6 +63,15 @@ let player;
 
 player = new Player(160, 140);
 
+/*
+This part will prevent the scroll functionality on 'keydown'
+*/
+window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
