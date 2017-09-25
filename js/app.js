@@ -38,7 +38,7 @@ Player.prototype.update = function() {
 
 };
 
-Player.prototype.render() = function() {
+Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);    
 }
 
