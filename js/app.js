@@ -29,6 +29,8 @@ Enemy.prototype.render = function() {
 
 let Player = function (x, y) {
 
+    this.x = x;
+    this.y = y;
     this.sprite = 'images/char-boy.png'; 
 };
 
@@ -56,6 +58,10 @@ enemy3 = new Enemy(120, 180);
 let allEnemies = [];
 
 allEnemies.push(enemy1, enemy2, enemy3);
+
+let player;
+
+player = new Player(160, 140);
 
 
 // This listens for key presses and sends the keys to your
