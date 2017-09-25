@@ -47,8 +47,13 @@ Player.prototype.handleInput = function() {
 
 let enemy1, enemy2, enemy3;
 
+enemy1 = new Enemy(120, 130);
+enemy2 = new Enemy(120, 150);
+enemy3 = new Enemy(120, 180);
 
-let allEnemies = []
+let allEnemies = [];
+
+allEnemies.push(enemy1, enemy2, enemy3);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
