@@ -18,9 +18,12 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x = this.x + this.speed;
+    
     if (this.x >= 415){
         this.x = 0;
-    } 
+        this.speed = Math.floor((Math.random() * 4) +1)
+        this.x = this.x + this.speed;
+    }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -76,6 +79,7 @@ allEnemies.push(enemy1, enemy2, enemy3);
 let player;
 
 player = new Player(205, 380);
+
 
 /*
 This part will prevent the scroll functionality on 'keydown'
