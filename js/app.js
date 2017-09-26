@@ -45,14 +45,14 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(key) {
 
     console.log(key)
-    if (key == "up"){
-        player.y -= 10;
-    } else if (key == "down") {
-        player.y +=10; 
-    } else if (key == "left") {
-        player.x -=10;
-    } else if (key == "right") {
-        player.x +=10;
+    if (key == "up" && player.y > -10){
+        player.y -= 5;
+    } else if (key == "down" && player.y < 430) {
+        player.y +=5; 
+    } else if (key == "left" && player.x > -15) {
+        player.x -=5;
+    } else if (key == "right" && player.x < 415) {
+        player.x +=5;
     }
 }
 // Now instantiate your objects.
