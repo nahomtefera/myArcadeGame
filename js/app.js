@@ -5,7 +5,7 @@ var Enemy = function(x, y, speed) {
     this.x = x;
     this.y = y;
     this.width = 80;
-    this.height = 40;
+    this.height = 30;
     this.speed = speed;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -57,7 +57,7 @@ let Player = function (x, y) {
     this.x = x;
     this.y = y;
     this.width = 40;
-    this.height = 70;
+    this.height = 40;
     this.sprite = chosenChar;
 };
 
@@ -102,9 +102,9 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(key) {
 
     // This will move the player INSIDE the game board
-    if (key == "up" && player.y > -10){
+    if (key == "up" && player.y > 0){
         player.y -= 15;
-    } else if (key == "down" && player.y < 430) {
+    } else if (key == "down" && player.y < 425) {
         player.y +=15; 
     } else if (key == "left" && player.x > -15) {
         player.x -=15;
