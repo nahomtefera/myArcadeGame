@@ -4,6 +4,8 @@ var Enemy = function(x, y, speed) {
     // we've provided one for you to get started
     this.x = x;
     this.y = y;
+    this.width = 80;
+    this.height = 40;
     this.speed = speed;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -22,7 +24,7 @@ Enemy.prototype.update = function(dt) {
     // They will be assigned new random speeds
     if (this.x >= 415){
         this.x = 0;
-        this.speed = Math.floor((Math.random() * 4) +1)
+        this.speed = Math.floor((Math.random() * 3) +1)
         this.x = this.x + this.speed;
     }
 };
@@ -40,11 +42,29 @@ let Player = function (x, y) {
 
     this.x = x;
     this.y = y;
+    this.width = 40;
+    this.height = 70;
     this.sprite = 'images/char-boy.png';
 };
 
 Player.prototype.update = function() {
+
 };
+
+function checkCollisions() {
+    for(let i = 0; i < allEnemies.length; i++){    
+        if (player.x < allEnemies[i].x + allEnemies[i].width && player.x + player.width > allEnemies[i].x && player.y < allEnemies[i].y + allEnemies[i].height && player.y + player.height > allEnemies[i].y ){
+                console.log("Colision detected")
+            }
+    }
+}
+// Player.prototype.checkCollisions = function() {
+//     for (let i = 0; i < allEnemies.length; i++){
+        
+//     }if (player.x < allEnemies[i].x + allEnemies[i].width && player.x + player.width > allEnemies[i].x && player.y < allEnemies[i].y + allEnemies[i].height && player.y + player.height > allEnemies[i].y ){
+//             console.log("Colision detected")
+//         }
+// }
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);    
@@ -70,6 +90,7 @@ Player.prototype.handleInput = function(key) {
 // Instantiating Enemies
 let enemy1, enemy2, enemy3;
 
+// Creating enemies with starting point and random speed
 enemy1 = new Enemy(5, 50, Math.floor((Math.random() * 3) + 1));
 enemy2 = new Enemy(5, 130, Math.floor((Math.random() * 3) + 1));
 enemy3 = new Enemy(5, 215, Math.floor((Math.random() * 3) + 1));
