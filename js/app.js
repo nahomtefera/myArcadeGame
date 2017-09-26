@@ -38,13 +38,24 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
+// Open modal and choose character
+$(document).ready(function(){
+    $("#myModal").modal()
+});
+
+let chosenChar = "images/char-boy.png";
+
+$(".chars").click(function(){
+    chosenChar = $(this).find("img").attr("src");
+});
+
 let Player = function (x, y) {
 
     this.x = x;
     this.y = y;
     this.width = 40;
     this.height = 70;
-    this.sprite = 'images/char-boy.png';
+    this.sprite = chosenChar;
 };
 
 Player.prototype.update = function() {
