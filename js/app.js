@@ -61,9 +61,9 @@ Player.prototype.handleInput = function(key) {
 
 let enemy1, enemy2, enemy3;
 
-enemy1 = new Enemy(120, 130);
-enemy2 = new Enemy(120, 150);
-enemy3 = new Enemy(120, 180);
+enemy1 = new Enemy(5, 50);
+enemy2 = new Enemy(5, 130);
+enemy3 = new Enemy(5, 215);
 
 let allEnemies = [];
 
@@ -71,7 +71,7 @@ allEnemies.push(enemy1, enemy2, enemy3);
 
 let player;
 
-player = new Player(160, 140);
+player = new Player(205, 380);
 
 /*
 This part will prevent the scroll functionality on 'keydown'
