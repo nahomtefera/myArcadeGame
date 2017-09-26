@@ -54,9 +54,24 @@ Player.prototype.update = function() {
 function checkCollisions() {
     for(let i = 0; i < allEnemies.length; i++){    
         if (player.x < allEnemies[i].x + allEnemies[i].width && player.x + player.width > allEnemies[i].x && player.y < allEnemies[i].y + allEnemies[i].height && player.y + player.height > allEnemies[i].y ){
-                console.log("Colision detected")
+                console.log("Colision detected");
+                resetGame();
             }
     }
+}
+
+function resetGame(){
+    //reset player position
+    player.x = 205;
+    player.y = 380;
+    //reset enemies position
+    enemy1.x = 5;
+    enemy1.y = 50;;
+    enemy2.x = 5;
+    enemy2.y = 130;
+    enemy3.x = 5;
+    enemy3.y = 215;
+
 }
 // Player.prototype.checkCollisions = function() {
 //     for (let i = 0; i < allEnemies.length; i++){
