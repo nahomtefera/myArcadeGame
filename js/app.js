@@ -18,7 +18,8 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x = this.x + this.speed;
-    
+    // Once the bugs reach the end of the screen
+    // They will be assigned new random speeds
     if (this.x >= 415){
         this.x = 0;
         this.speed = Math.floor((Math.random() * 4) +1)
@@ -51,7 +52,7 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(key) {
 
-    console.log(key)
+    // This will move the player INSIDE the game board
     if (key == "up" && player.y > -10){
         player.y -= 15;
     } else if (key == "down" && player.y < 430) {
@@ -66,6 +67,7 @@ Player.prototype.handleInput = function(key) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
+// Instantiating Enemies
 let enemy1, enemy2, enemy3;
 
 enemy1 = new Enemy(5, 50, Math.floor((Math.random() * 3) + 1));
@@ -76,6 +78,7 @@ let allEnemies = [];
 
 allEnemies.push(enemy1, enemy2, enemy3);
 
+// Instatiating Player
 let player;
 
 player = new Player(205, 380);
