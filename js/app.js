@@ -50,13 +50,13 @@ Player.prototype.handleInput = function(key) {
 
     console.log(key)
     if (key == "up" && player.y > -10){
-        player.y -= 5;
+        player.y -= 15;
     } else if (key == "down" && player.y < 430) {
-        player.y +=5; 
+        player.y +=15; 
     } else if (key == "left" && player.x > -15) {
-        player.x -=5;
+        player.x -=15;
     } else if (key == "right" && player.x < 415) {
-        player.x +=5;
+        player.x +=15;
     }
 }
 // Now instantiate your objects.
@@ -65,9 +65,9 @@ Player.prototype.handleInput = function(key) {
 
 let enemy1, enemy2, enemy3;
 
-enemy1 = new Enemy(5, 50, 2);
-enemy2 = new Enemy(5, 130, 4);
-enemy3 = new Enemy(5, 215, 7);
+enemy1 = new Enemy(5, 50, Math.floor((Math.random() * 3) + 1));
+enemy2 = new Enemy(5, 130, Math.floor((Math.random() * 3) + 1));
+enemy3 = new Enemy(5, 215, Math.floor((Math.random() * 3) + 1));
 
 let allEnemies = [];
 
