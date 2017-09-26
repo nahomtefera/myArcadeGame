@@ -1,9 +1,10 @@
 // Enemies our player must avoid
-var Enemy = function(x, y) {
+var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
     this.x = x;
     this.y = y;
+    this.speed = speed;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
 
@@ -61,9 +62,9 @@ Player.prototype.handleInput = function(key) {
 
 let enemy1, enemy2, enemy3;
 
-enemy1 = new Enemy(5, 50);
-enemy2 = new Enemy(5, 130);
-enemy3 = new Enemy(5, 215);
+enemy1 = new Enemy(5, 50, 20);
+enemy2 = new Enemy(5, 130, 35);
+enemy3 = new Enemy(5, 215, 50);
 
 let allEnemies = [];
 
