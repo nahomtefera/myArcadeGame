@@ -47,6 +47,9 @@ let chosenChar = "images/char-boy.png";
 
 $(".chars").click(function(){
     chosenChar = $(this).find("img").attr("src");
+    player.sprite = chosenChar;
+    $("#myModal").modal("hide");    
+    player.render();
 });
 
 let Player = function (x, y) {
