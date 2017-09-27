@@ -63,14 +63,25 @@ let Player = function (x, y) {
 
 Player.prototype.update = function() {
     addScore(); 
+    winGame();
 };
 
 function checkCollisions() {
     for(let i = 0; i < allEnemies.length; i++){    
         if (player.x < allEnemies[i].x + allEnemies[i].width && player.x + player.width > allEnemies[i].x && player.y < allEnemies[i].y + allEnemies[i].height && player.y + player.height > allEnemies[i].y ){
                 console.log("Colision detected");
+                if(score > 0){
+                    score--;
+                }    
                 resetGame();
             }
+    }
+}
+
+function winGame(){
+    if(score === 10){
+        $("#myModal").modal();
+        score = 0;
     }
 }
 
@@ -81,10 +92,13 @@ function resetGame(){
     //reset enemies position
     enemy1.x = 5;
     enemy1.y = 50;;
+    enemy1.speed = Math.floor((Math.random() * 3) +1);  
     enemy2.x = 5;
     enemy2.y = 130;
+    enemy2.speed = Math.floor((Math.random() * 3) +1);      
     enemy3.x = 5;
     enemy3.y = 215;
+    enemy3.speed = Math.floor((Math.random() * 3) +1);  
 
 }
 // Player.prototype.checkCollisions = function() {
