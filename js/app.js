@@ -91,6 +91,17 @@ function winGame(){
     }
 }
 
+// Play Again
+$(".restart-game").click(function(){
+    resetGame();
+    $("#winningGame").modal("hide")
+});
+
+//Change Character
+$(".change-char").click(function(){
+    $("#myModal").modal();
+});
+
 function resetGame(){
     //reset player position
     player.x = 205;
