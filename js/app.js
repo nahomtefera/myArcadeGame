@@ -62,7 +62,7 @@ let Player = function (x, y) {
 };
 
 Player.prototype.update = function() {
-
+    addScore(); 
 };
 
 function checkCollisions() {
@@ -134,6 +134,19 @@ let player;
 player = new Player(205, 380);
 
 
+
+
+// Winning and Losing
+
+let score = 0, deaths = 0;
+
+function addScore(){
+    if(player.y <= -10) {
+        score++;
+        resetGame();
+        console.log("you did it, score: " + score);
+    }
+}
 /*
 This part will prevent the scroll functionality on 'keydown'
 */
