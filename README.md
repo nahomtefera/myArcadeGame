@@ -1,6 +1,49 @@
-frontend-nanodegree-arcade-game
+# ARCADE GAME - Nanodegree project
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+In this Nanodegree project we are using Object Oriented Programming to build this Arcade Game. 
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## Installation
+
+In order to install it in your computer clone it with git and open index.html file in your browser to play the game.
+
+```
+git clone https://github.com/nahomtefera/myArcadeGame.git
+cd myArcadeGame
+start index.html
+```
+
+## Built With
+
+* Bootstrap - The web framework used
+
+## Functionality
+
+Arrow Keys to move the character.
+
+Restart button to start from the beginning.
+
+Change character button to change your char.
+
+
+### You need to reach the water, but there are bugs in the way!
+
+First you will chose your character. If you don't want to chose any you will use the default character already selected.
+
+In order to move you character you need to use the arrows keys.
+
+You need to move your character to reach the water.
+
+If you make it to the water you will add 1 point to your score.
+
+If a bug hits you you will lose 1 point and you will have to start from the beginning.
+
+You can change your character at any point during the game.
+
+If you score 10 point you will win the game!
+
+Good luck :)
+
+## Authors
+
+* **Nahom Endale** 
