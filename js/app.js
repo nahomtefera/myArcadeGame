@@ -67,6 +67,8 @@ Player.prototype.update = function() {
     winGame();
 };
 
+// if player touches a bug score will decrease 1 point. 
+//Game will be reseted
 function checkCollisions() {
     for(let i = 0; i < allEnemies.length; i++){    
         if (player.x < allEnemies[i].x + allEnemies[i].width && player.x + player.width > allEnemies[i].x && player.y < allEnemies[i].y + allEnemies[i].height && player.y + player.height > allEnemies[i].y ){
@@ -119,13 +121,6 @@ function resetGame(){
     enemy3.speed = Math.floor((Math.random() * 3) +1);  
 
 }
-// Player.prototype.checkCollisions = function() {
-//     for (let i = 0; i < allEnemies.length; i++){
-        
-//     }if (player.x < allEnemies[i].x + allEnemies[i].width && player.x + player.width > allEnemies[i].x && player.y < allEnemies[i].y + allEnemies[i].height && player.y + player.height > allEnemies[i].y ){
-//             console.log("Colision detected")
-//         }
-// }
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);    
@@ -179,7 +174,7 @@ function addScore(){
         console.log("you did it, score: " + score);
     }
 }
-
+// Score butoon will change color according to score
 function showScore(){
     $(".score").html(score)
     if(score < 4 && ($(".score").hasClass("btn-warning") || $(".score").hasClass("btn-success"))){
