@@ -28,3 +28,9 @@ header {
     text-transform: uppercase;
     font-family: "Raleway";
 }
+
+.play-again-text {
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #777;
+}
