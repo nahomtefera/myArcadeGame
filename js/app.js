@@ -63,6 +63,7 @@ let Player = function (x, y) {
 
 Player.prototype.update = function() {
     addScore(); 
+    showScore();
     winGame();
 };
 
@@ -94,7 +95,7 @@ function winGame(){
 // Play Again
 $(".restart-game").click(function(){
     resetGame();
-    $("#winningGame").modal("hide")
+    $("#winningGame").modal("hide");
 });
 
 //Change Character
@@ -176,6 +177,20 @@ function addScore(){
         score++;
         resetGame();
         console.log("you did it, score: " + score);
+    }
+}
+
+function showScore(){
+    $(".score").html(score)
+    if(score < 4 && ($(".score").hasClass("btn-warning") || $(".score").hasClass("btn-success"))){
+        $(".score").removeClass("btn-warning btn-success");
+        $(".score").addClass("btn-danger");
+    }else if(score > 4 && score < 9 && ($(".score").hasClass("btn-danger") || $(".score").hasClass("btn-success"))){
+        $(".score").removeClass("btn-danger btn-success");
+        $(".score").addClass("btn-warning");
+    }else if(score >= 9 && ($(".score").hasClass("btn-danger") || $(".score").hasClass("btn-warning"))){
+        $(".score").removeClass("btn-danger btn-warning");
+        $(".score").addClass("btn-success");
     }
 }
 /*
