@@ -77,12 +77,13 @@ function checkCollisions() {
             }
     }
 }
-
+// function to decide how to win the game
 function winGame(){
     if(score === 10){
-        $("#myModal").modal();
+        $("#winningGame").modal();
         score = 0;
     }
+
 }
 
 function resetGame(){
