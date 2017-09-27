@@ -82,8 +82,13 @@ function winGame(){
     if(score === 10){
         $("#winningGame").modal();
         score = 0;
+        enemy1.x = 5;
+        enemy2.x = 5;
+        enemy3.x = 5;
+        enemy1.speed = 0;
+        enemy2.speed = 0;
+        enemy3.speed = 0;
     }
-
 }
 
 function resetGame(){
