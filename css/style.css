@@ -2,7 +2,29 @@ body {
     text-align: center;
 }
 
-.chars{
+.chars {
     display: inline-block;
     cursor: pointer;
+}
+
+header {
+}
+
+.btn {
+    font-family: "Raleway";
+    font-weight: 700!important;
+    text-transform: uppercase;
+}
+
+.title {
+    text-transform: uppercase;
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #777;
+    margin-top: 5px;
+}
+
+.modal-title {
+    text-transform: uppercase;
+    font-family: "Raleway";
 }
