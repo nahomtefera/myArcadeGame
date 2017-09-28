@@ -129,14 +129,14 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(key) {
 
     // This will move the player INSIDE the game board
-    if (key == "up" && player.y > 0){
-        player.y -= 15;
-    } else if (key == "down" && player.y < 425) {
-        player.y +=15; 
-    } else if (key == "left" && player.x > -15) {
-        player.x -=15;
-    } else if (key == "right" && player.x < 415) {
-        player.x +=15;
+    if (key == "up" && this.y > 0){
+        this.y -= 15;
+    } else if (key == "down" && this.y < 425) {
+        this.y +=15; 
+    } else if (key == "left" && this.x > -15) {
+        this.x -=15;
+    } else if (key == "right" && this.x < 415) {
+        this.x +=15;
     }
 }
 // Now instantiate your objects.
